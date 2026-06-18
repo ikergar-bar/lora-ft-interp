@@ -1,18 +1,18 @@
-# Run setup verification before pinning (see lora-sentiment-interpretability-spec.md §6).
-# After confirming all imports work, replace each entry with the exact version from `pip freeze`.
-# Critical: verify transformer-lens <-> transformers compatibility before pinning anything.
-#
-# torch: install separately with the CUDA wheel matching your GPU driver:
-#   pip install torch --index-url https://download.pytorch.org/whl/cu<VER>
+# Pinned versions verified 2026-06-18 (Python 3.x, CPU-only torch for now).
+# torch: reinstall with the CUDA wheel for your GPU before training:
+#   uv pip install torch --index-url https://download.pytorch.org/whl/cu<VER>
+# Critical: do NOT upgrade transformers or transformer-lens independently (compatibility).
 
-transformers
-peft
-datasets
-accelerate
-transformer-lens
-scikit-learn
-umap-learn
-matplotlib
+torch==2.7.1
+transformers==5.12.1
+peft==0.19.1
+datasets==5.0.0
+accelerate==1.14.0
+transformer-lens==3.4.0
+scikit-learn==1.9.0
+umap-learn==0.5.12
+matplotlib==3.11.0
+pyyaml==6.0.3
 
 # Optional experiment tracking:
 # wandb
