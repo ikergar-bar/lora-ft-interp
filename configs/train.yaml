@@ -1,0 +1,36 @@
+model:
+  name: gpt2                   # GPT-2 small (124M). Alternative: EleutherAI/pythia-160m
+  precision: fp16              # fp16 for Turing/Pascal (4 GB); switch to bf16 on Ampere+
+
+data:
+  dataset: sst2
+  max_seq_len: 64              # Short sentences; raise to 128 if VRAM allows
+  prompt_template: "Review: {text} Sentiment:"
+  pos_token: " positive"
+  neg_token: " negative"
+
+lora:
+  rank: 8
+  alpha: 16                    # alpha/rank = 2 is a common starting point
+  dropout: 0.05
+  target_modules:              # GPT-2 attention projection. Add c_proj / mlp layers to study wider deltas
+    - c_attn
+  bias: none
+
+training:
+  batch_size: 16
+  gradient_accumulation_steps: 2   # effective batch = 32; increase if VRAM is tight
+  learning_rate: 3.0e-4
+  num_epochs: 3
+  warmup_ratio: 0.06
+  weight_decay: 0.01
+  seed: 42
+  gradient_checkpointing: false    # Enable if VRAM is tight (adds compute overhead)
+  fp16: true                       # Must match model.precision
+
+logging:
+  log_vram_peak: true
+  log_every_n_steps: 50
+
+output:
+  adapter_dir: artifacts/lora_adapter
