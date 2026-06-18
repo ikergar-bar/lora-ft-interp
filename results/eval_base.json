@@ -1,0 +1,14 @@
+{
+  "_logged_at": "2026-06-18T09:44:02.967432+00:00",
+  "milestone": "M0",
+  "model": "gpt2",
+  "adapter": null,
+  "split": "validation",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "pos_token_id": 3967,
+  "neg_token_id": 4633,
+  "n_examples": 872,
+  "accuracy": 0.617
+}
