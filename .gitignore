@@ -9,11 +9,12 @@ __pycache__/
 data/
 
 # Model weights (large binaries — commit adapters via DVC or external storage if needed)
-artifacts/*.bin
-artifacts/*.safetensors
-artifacts/*.pt
-artifacts/*.pth
+artifacts/**/*.bin
+artifacts/**/*.safetensors
+artifacts/**/*.pt
+artifacts/**/*.pth
 artifacts/merged_model/
+artifacts/trainer_tmp/
 
 # results/ is intentionally tracked (figures, metrics, tables)
 

@@ -34,6 +34,15 @@ Argumento: el hito a verificar, p. ej. `M1`.
 
 El criterio de aceptación del hito en §7 se cumple, con evidencia registrada (métrica/figura/log), no solo afirmado.
 
+## Al cerrar un hito (PASS) — actualizar STATUS.md
+
+Una vez el criterio pasa, actualizar `STATUS.md`:
+1. Marcar el hito como ✅ PASS en la tabla y añadir el resultado clave (accuracy, umbral de paridad, etc.).
+2. Añadir una sección `## Mx — Resultados y hallazgos` con los números y rutas de artefactos relevantes.
+3. Registrar cualquier quirk o decisión de implementación que no esté en el spec (compatibilidades, cambios de API, etc.).
+4. Actualizar la sección **Próximos pasos** para apuntar al siguiente hito.
+5. Actualizar el campo **Milestone actual** al siguiente hito pendiente.
+
 ## Si FALLA
 
 **Parar y reportar.** No avanzar al siguiente hito. Consultar §12 del spec (riesgos y válvulas de escape) para el hito en cuestión antes de reintentar.

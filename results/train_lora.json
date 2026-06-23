@@ -1,0 +1,15 @@
+{
+  "_logged_at": "2026-06-23T11:32:48.462354+00:00",
+  "milestone": "M1",
+  "model": "gpt2",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "fp16_training": false,
+  "n_train_examples": 5000,
+  "num_epochs": 3,
+  "peak_vram_mb": null,
+  "train_loss": 0.7276,
+  "adapter_dir": "C:\\Users\\iker.garcia\\OneDrive - IKERLAN S. COOP\\Escritorio\\workspace\\lora_ft_interp\\artifacts\\lora_adapter",
+  "smoke_test": true
+}

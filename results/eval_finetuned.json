@@ -1,0 +1,14 @@
+{
+  "_logged_at": "2026-06-23T11:45:24.656776+00:00",
+  "milestone": "eval",
+  "model": "gpt2",
+  "adapter": "artifacts/lora_adapter",
+  "split": "validation",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "pos_token_id": 3967,
+  "neg_token_id": 4633,
+  "n_examples": 872,
+  "accuracy": 0.6342
+}

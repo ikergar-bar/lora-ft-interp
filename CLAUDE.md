@@ -2,6 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Session start — read these two files first
+
+1. **`STATUS.md`** — estado actual del proyecto: qué hitos están hechos, resultados clave, quirks del entorno descubiertos, y próximos pasos. Leer antes de cualquier acción.
+2. **`lora-sentiment-interpretability-spec.md`** — spec completo (fuente de verdad inmutable).
+
 ## Source of truth
 
 `lora-sentiment-interpretability-spec.md` is the authoritative spec for this project and **must be read in full before acting**. It defines milestones (M0–M7), each with verifiable acceptance criteria, plus an explicit out-of-scope section. Do not introduce dependencies or design changes that contradict it without annotating the deviation and its justification. This CLAUDE.md only summarizes the non-obvious constraints; the spec governs.
