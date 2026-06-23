@@ -46,3 +46,19 @@ def build_eval_set(split: str, template: str) -> list[EvalExample]:
         EvalExample(prompt=format_prompt(row["sentence"], template), gold_label=int(row["label"]))
         for row in dataset
     ]
+
+
+def build_train_examples(
+    split: str, template: str, pos_token: str, neg_token: str
+) -> list[tuple[str, str]]:
+    """Build (prompt_text, label_token) pairs for LoRA training (M1).
+
+    Returns pairs where label_token is e.g. " positive" or " negative",
+    ready to be appended to the prompt before tokenization with label masking.
+    """
+    label_map = {LABEL_NEGATIVE: neg_token, LABEL_POSITIVE: pos_token}
+    dataset = load_sst2(split)
+    return [
+        (format_prompt(row["sentence"], template), label_map[int(row["label"])])
+        for row in dataset
+    ]
